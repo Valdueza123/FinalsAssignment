@@ -1,0 +1,289 @@
+/*!
+ * SlickNav Responsive Mobile Menu v1.0.10
+ * (c) 2016 Josh Cope
+ * licensed under MIT
+ */
+ 
+ * {
+	box-sizing:border-box;
+ }
+ 
+body {
+	margin: 0 auto;
+	padding: 0 auto;
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	font-weight: 400; 
+	line-height: 2.5em;
+	background-color: #111;
+	color: #ffffff;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Set height as needed */
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: auto;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.button {
+  border-radius: 10px;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #bb86fc;
+  color: #fff;
+}
+
+/* Slider Animation */
+.slide {
+  animation: slide 16s linear infinite;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.slide.slide:nth-child(4) {
+  animation-delay: 12s;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  35% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+p {
+  line-height: 1.5;
+  text-align: justify;
+  align-content: center;
+}
+
+
+.paragraph{
+	width:60%;
+	color: white;
+	font-family: Courier New;
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Split the screen in half */
+.split {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width:50%;
+}
+
+.left {
+	float:left;
+}
+
+.left .content {
+	width: 80%;
+	align-items: center;
+	text-align: center;
+}
+
+.left .content img {
+	width: 70%;
+	height: auto;
+	border-radius: 10px;
+}
+
+.left .content p {
+	font-size: 14px;
+	opacity: 0.7;
+	text-align: center;
+	padding: 5px;
+	margin: 15px 100px;
+}
+
+.left .content button{
+	width: 30%;
+	margin-top: 10px;
+	padding: 10px 15px;
+	font-size: 20px;
+	background-color: #bb86fc;
+	color: #111;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.left .content button:hover{
+	background-color: #3700b3;
+	color: #fff;
+}
+
+.right .content button:hover{
+	background-color: #3700b3;
+	color: #fff;
+}
+
+.right {
+	float:left;
+	color: #121212;
+}
+
+.right .content {
+	width: 70%;
+	background-color: white;
+}
+
+.right .content h5{
+	margin: 20px 25px;
+	padding: 0 25px;
+	text-align: justify;
+}
+
+.right .content p{
+	margin: 15px 25px;
+	padding: 0 25px;
+	font-size: 16px;
+	text-align: justify;
+	opacity: 0.8;
+}
+
+.right .content button{
+	width: 80%;
+	padding: 15px 25px;
+	font-size: 1.5rem;
+	background-color: #bb86fc;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.right .content button:hover{
+	background-color: #3700b3;
+	color: #fff;
+}
+
+hr {
+	margin: 15px auto;
+	width: 85%;
+}
+
+.right .content button.email{
+	width: 80%;
+	margin: 25px;
+	padding: 15px 25px;
+	font-size: 1.5rem;
+	background-color: white;
+	color: #bb86fc;
+	border: 1px solid;
+	cursor: pointer;
+}
+
+.right .content button.email:hover{
+	background-color: #3700b3;
+	color: white;
+}
